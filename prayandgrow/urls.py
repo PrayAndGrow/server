@@ -21,6 +21,7 @@ import patrons.views
 
 router = routers.DefaultRouter()
 router.register(r'brainfood', brainfood.views.BrainFoodSet)
+router.register(r'tags', brainfood.views.TagSet)
 router.register(r'patrons', patrons.views.PatronSet)
 
 
