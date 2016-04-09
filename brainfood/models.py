@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class BrainBit(models.Model):
     """
     A single entry on the list of proposals
@@ -15,3 +16,11 @@ class BrainBit(models.Model):
     description = models.TextField
     image = models.URLField
     duration = models.DurationField
+
+
+class Tag(models.Model):
+    """
+    A single tag for the BrainBit
+    """
+    tag = models.CharField(max_length=64)
+    brain_bits = models.ManyToManyField(BrainBit)
