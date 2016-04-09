@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'PrayAndGrow.wsgi.application'
+WSGI_APPLICATION = 'prayandgrow.wsgi.application'
 
 
 # Database
