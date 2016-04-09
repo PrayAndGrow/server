@@ -1,6 +1,16 @@
 from django.db import models
 
 
+class Tag(models.Model):
+    """
+    A single tag for the BrainBit
+    """
+    tag = models.CharField(max_length=64)
+
+    def __str__(self):
+        return self.tag
+
+
 class BrainBit(models.Model):
     """
     A single entry on the list of proposals
@@ -16,17 +26,7 @@ class BrainBit(models.Model):
     description = models.CharField(max_length=512)
     image = models.URLField(max_length=200)
     duration = models.DurationField
+    brain_bits = models.ManyToManyField(Tag)
 
     def __str__(self):
         return self.title + " " + self.description + ", " + self.type
-
-
-class Tag(models.Model):
-    """
-    A single tag for the BrainBit
-    """
-    tag = models.CharField(max_length=64)
-    brain_bits = models.ManyToManyField(BrainBit)
-
-    def __str__(self):
-        return self.tag
