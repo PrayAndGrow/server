@@ -50,7 +50,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'PrayAndGrow.urls'
+ROOT_URLCONF = 'prayandgrow.urls'
 
 TEMPLATES = [
     {
@@ -120,3 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+ENV_PATH = os.path.abspath(os.path.dirname(__file__))
+STATIC_ROOT = os.path.join(ENV_PATH, '../public/static/')
+MEDIA_ROOT = os.path.join(ENV_PATH, '../public/media/')
