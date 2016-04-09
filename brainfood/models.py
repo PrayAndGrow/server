@@ -14,3 +14,4 @@ class BrainBit(models.Model):
     type = models.CharField(max_length=2, choices=TYPES)
     description = models.TextField
     image = models.URLField
+    duration = models.DurationField
