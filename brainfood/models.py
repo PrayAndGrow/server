@@ -18,7 +18,7 @@ class BrainBit(models.Model):
     duration = models.DurationField
 
     def __str__(self):
-        return self.title + ", " + self.type
+        return self.title + " " + self.description + ", " + self.type
 
 
 class Tag(models.Model):
