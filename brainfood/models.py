@@ -26,7 +26,7 @@ class BrainBit(models.Model):
     description = models.CharField(max_length=512)
     image = models.URLField(max_length=200)
     duration = models.DurationField
-    brain_bits = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag)
 
     def __str__(self):
         return self.title + " " + self.description + ", " + self.type
