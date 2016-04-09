@@ -5,7 +5,7 @@ class Tag(models.Model):
     """
     A single tag for the BrainBit
     """
-    tag = models.CharField(max_length=64)
+    tag = models.CharField(max_length=64, unique=True)
 
     def __str__(self):
         return self.tag
@@ -21,7 +21,7 @@ class BrainBit(models.Model):
         ('PO', 'Podcast')
     )
     title = models.CharField(max_length=64)
-    url = models.URLField(max_length=200)
+    url = models.URLField(max_length=200, unique=True)
     type = models.CharField(max_length=2, choices=TYPES)
     description = models.CharField(blank=True, max_length=512)
     image = models.URLField(blank=True, max_length=200)
