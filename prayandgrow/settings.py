@@ -75,13 +75,7 @@ WSGI_APPLICATION = 'prayandgrow.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+exec(open(os.path.join(BASE_DIR, 'prayandgrow', 'settings', '10-database.py')).read())
 
 
 # Password validation
