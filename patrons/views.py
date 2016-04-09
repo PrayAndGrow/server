@@ -1,7 +1,7 @@
-from django.shortcuts import render
 from rest_framework import viewsets
 from .models import Patron
 from .serializers import PatronSerializer
+
 
 class PatronSet(viewsets.ModelViewSet):
     """
