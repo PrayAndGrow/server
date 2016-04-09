@@ -16,10 +16,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from rest_framework import routers
-from brainfood import views
+import brainfood.views
+import patrons.views
 
 router = routers.DefaultRouter()
-router.register(r'brainfood', views.BrainFoodSet)
+router.register(r'brainfood', brainfood.views.BrainFoodSet)
+router.register(r'patrons', patrons.views.PatronSet)
 
 
 urlpatterns = [
