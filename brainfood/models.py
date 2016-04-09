@@ -11,10 +11,10 @@ class BrainBit(models.Model):
         ('PO', 'Podcast')
     )
     title = models.CharField(max_length=64)
-    url = models.URLField
+    url = models.URLField(max_length=200)
     type = models.CharField(max_length=2, choices=TYPES)
-    description = models.TextField
-    image = models.URLField
+    description = models.CharField(max_length=512)
+    image = models.URLField(max_length=200)
     duration = models.DurationField
 
     def __str__(self):
