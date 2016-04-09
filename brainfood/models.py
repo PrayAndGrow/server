@@ -29,4 +29,4 @@ class BrainBit(models.Model):
     tags = models.ManyToManyField(Tag)
 
     def __str__(self):
-        return self.title + " " + self.description + ", " + self.type
+        return self.title + ", " + self.type

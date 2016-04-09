@@ -8,12 +8,18 @@ class Place(models.Model):
     """
     name = models.CharField(max_length=1024)
 
+    def __str__(self):
+        return self.name
+
 
 class Activity(models.Model):
     """
     An activity that can have a patron attached.
     """
     name = models.CharField(max_length=1024)
+
+    def __str__(self):
+        return self.name
 
 
 class Patron(models.Model):
@@ -26,3 +32,6 @@ class Patron(models.Model):
     canonisation = models.DateField(blank=True)
     places = models.ManyToManyField(Place, blank=True)
     activities = models.ManyToManyField(Activity, blank=True)
+
+    def __str__(self):
+        return self.name
