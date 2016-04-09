@@ -66,3 +66,8 @@ target/
 
 # Don't share database access
 prayandgrow/settings/10-database.py
+
+*.sqlite3
+
+# OSX shit
+.DS_Store
