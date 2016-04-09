@@ -28,8 +28,8 @@ class Patron(models.Model):
     """
     name = models.CharField(max_length=1024)
     url = models.URLField()
-    reminiscence = models.DateField(blank=True)
-    canonisation = models.DateField(blank=True)
+    reminiscence = models.DateField(blank=True, null=True)
+    canonisation = models.DateField(blank=True, null=True)
     places = models.ManyToManyField(Place, blank=True)
     activities = models.ManyToManyField(Activity, blank=True)
 
