@@ -23,9 +23,9 @@ class BrainBit(models.Model):
     title = models.CharField(max_length=64)
     url = models.URLField(max_length=200)
     type = models.CharField(max_length=2, choices=TYPES)
-    description = models.CharField(max_length=512)
-    image = models.URLField(max_length=200)
-    duration = models.DurationField()
+    description = models.CharField(blank=True, max_length=512)
+    image = models.URLField(blank=True, max_length=200)
+    duration = models.DurationField(default="5:0")
     tags = models.ManyToManyField(Tag)
 
     def __str__(self):
