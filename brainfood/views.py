@@ -27,7 +27,7 @@ class TagSet(viewsets.ModelViewSet):
 @api_view(['POST'])
 def surpriseMe(request):
     duration_lt = timedelta(seconds=request.data['duration_lt'])
-    bits = BrainBit.objects.filter(tags__in=request.data['tags']).filter(type__in=request.data['types']).filter(duration__lt = duration_lt).order_by('-duration')[:1]
+    bits = BrainBit.objects.filter(tags__in=request.data['tags']).filter(type__in=request.data['types']).filter(duration__lt = duration_lt).order_by('-duration')
     serializer = BrainBitSerializer(bits, many=True)
     return Response({'response': serializer.data})
 
