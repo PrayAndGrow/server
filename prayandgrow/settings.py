@@ -131,3 +131,6 @@ MEDIA_URL = '/media/'
 ENV_PATH = os.path.abspath(os.path.dirname(__file__))
 STATIC_ROOT = os.path.join(ENV_PATH, '../public/static/')
 MEDIA_ROOT = os.path.join(ENV_PATH, '../public/media/')
+
+# Read all API keys
+exec(open(os.path.join(BASE_DIR, 'prayandgrow', 'settings', '20-api-keys.py')).read())
