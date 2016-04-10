@@ -38,14 +38,14 @@ def get_places(lat, lon):
         return []
 
 
-@api_view(['GET', 'POST'])
+@api_view(['POST'])
 def patron_search(request):
     """
     Search for patrons in the neighbourhood and for today.
     """
     today = datetime.date.today()
     if 'latitude' and 'longitude' in request.data:
-        places = get_places(requests.data['latitude'], request.data['longitude'])
+        places = get_places(request.data['latitude'], request.data['longitude'])
 
     try:
         patrons = Patron.objects.filter(Q(reminiscence=today) |
