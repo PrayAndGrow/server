@@ -1,5 +1,5 @@
 from django.db import models
-
+import datetime
 
 class Tag(models.Model):
     """
@@ -26,6 +26,7 @@ class BrainBit(models.Model):
     description = models.CharField(blank=True, max_length=512)
     image = models.URLField(blank=True, max_length=200)
     duration = models.DurationField(default="5:0")
+    created = models.DateTimeField(auto_now_add=True, blank=True)
     tags = models.ManyToManyField(Tag)
 
     def __str__(self):
