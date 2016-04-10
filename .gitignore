@@ -64,8 +64,9 @@ target/
 # PyCharm
 .idea
 
-# Don't share database access
+# Don't share confidential data
 prayandgrow/settings/10-database.py
+prayandgrow/settings/20-api-keys.py
 
 *.sqlite3
 
