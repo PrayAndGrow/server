@@ -49,7 +49,8 @@ def patron_search(request):
 
     try:
         patrons = Patron.objects.filter(Q(reminiscence=today) |
-            reduce(lambda x, y: x | y, [Q(places__name__icontains=place) for place in places]))
+                                        reduce(lambda x, y: x | y,
+                                               [Q(places__name__icontains=place) for place in places]))
     except UnboundLocalError:
         patrons = Patron.objects.filter(Q(reminiscence=today) | Q(canonisation=today))
 

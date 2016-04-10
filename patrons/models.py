@@ -44,6 +44,7 @@ class Patron(models.Model):
     places = models.ManyToManyField(Place, blank=True)
     activities = models.ManyToManyField(Activity, blank=True)
     prayer = models.ForeignKey(Prayer, on_delete=models.CASCADE, blank=True, null=True)
+    image = models.URLField(blank=True)
 
     def __str__(self):
         return self.name
