@@ -7,12 +7,14 @@ class TagSerializer(serializers.HyperlinkedModelSerializer):
         model = Tag
         fields = ("tag","id")
 
+
 class BrainBitSerializer(serializers.HyperlinkedModelSerializer):
     id = serializers.ReadOnlyField()
     tags = TagSerializer(many=True)
     class Meta:
         model = BrainBit
         fields = ('id','title', 'url', 'type', 'description', 'image', 'duration', 'tags')
+
 
 # class SurpriseMeSerializer():
 

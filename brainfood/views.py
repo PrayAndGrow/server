@@ -16,6 +16,21 @@ class BrainFoodSet(viewsets.ModelViewSet):
     queryset = BrainBit.objects.all()
     serializer_class = BrainBitSerializer
 
+    def create(self, validated_data):
+        tags = validated_data.data["tags"]
+        tagsList = []
+        for tag in tags:
+            obj, created= Tag.objects.get_or_create(tag=tag)
+            tagsList.append(obj)
+            if created:
+                obj.save()
+
+        del validated_data.data["tags"]
+        brainBit = BrainBitSerializer().create(validated_data=validated_data.data)
+        brainBit.tags = tagsList
+
+        return Response({'response': True})
+
 class TagSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.

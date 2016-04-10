@@ -27,7 +27,7 @@ class BrainBit(models.Model):
     image = models.URLField(blank=True, max_length=200)
     duration = models.DurationField(default="5:0")
     created = models.DateTimeField(auto_now_add=True, blank=True)
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(Tag, blank=True)
 
     def __str__(self):
         return self.title + ", " + self.type
